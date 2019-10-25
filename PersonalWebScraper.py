@@ -4,62 +4,65 @@ import pandas as pd
 import numpy as np
 import requests
 from bs4 import BeautifulSoup
+import csv
+
+#Create a CSV where each line contains Product Description and URL
+#Read in CSV, running a loop for each line
+#Where it finds a matchin description in the current database it appends the latest data
+#Where it is not found it creates a new entry
+
+
+#Bonsai items
+#
+
+#inputDF = pd.read_csv('WebScraper_Input.csv')
+#print(inputDF)
+#print(inputDF.loc['Product Category'])
 
 
 
-url_NetBaby = 'https://netbaby.co.za/product/tommee-tippee-closer-nature-breast-feeding-starter-kit' 
-response_NetBaby = requests.get(url_NetBaby)
-soup = BeautifulSoup(response_NetBaby.text, "html.parser")
-soup.findAll('span',class_="woocommerce-Price-amount amount")
-capturedPrice = soup.findAll('span',class_="woocommerce-Price-amount amount")[1].text
-print("Net Baby --> " + soup.findAll('span',class_="woocommerce-Price-amount amount")[1].text)
+priceLog = pd.DataFrame(columns=['Product','Website','Prices'])
+# First entry
+url = 'https://www.pnp.co.za/pnpstorefront/pnp/en/All-Products/Home-&-Outdoor/Garden-&-Patio/Growing-Fertilisers/Plant-Foods/EFEKTO-SEAGRO-1L/p/000000000000262286_EA'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+capturedPrice = soup.findAll('div',class_="normalPrice")[0].text
+capturedPrice = capturedPrice.strip('0')
+capturedPrice = capturedPrice.strip()
 
-priceLog = np.array([['Websites','Prices'],['Netbaby',capturedPrice]])
+print(capturedPrice)
 
-#url_Loot = 'https://www.loot.co.za/product/tommee-tippee-closer-to-nature-breastfeeding-starter-ki/dkwm-3314-g410' 
-#response_Loot = requests.get(url_Loot)
-#print(response_Loot)
-#soup = BeautifulSoup(response_Loot.text, "html.parser")
-#soup.findAll('span',class_="woocommerce-Price-amount amount")
-#print(soup.findAll('span'))
+priceLog = priceLog.append({'Product':'Seagro 1L','Website':'PicknPay','Prices':capturedPrice}, ignore_index=True)
 
-url_MyMomAndMe = 'https://www.mymomandme.co.za/products/tommee-tippee-closer-to-nature-breastfeeding-starter-kit' 
-response_MyMomAndMe = requests.get(url_MyMomAndMe)
-soup = BeautifulSoup(response_MyMomAndMe.text, "html.parser")
-#soup.findAll('span',class_="product-price")
-print("My Mom and Me  --> " + soup.findAll('span', itemprop="price")[0].text)
+# second entry
+url = 'https://www.builders.co.za/Garden-%26-Outdoor-Living/Garden/Fertilizers-%26-Plant-Food/All-Purpose-Plant-Food/Seagro-B2051-Fish-Emulsion-%281L%29/p/000000000000036845'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+capturedPrice = soup.findAll('div',class_="price")[0].text
+#capturedPrice = capturedPrice.strip('0')
+capturedPrice = capturedPrice.strip()
 
-#BabyBoom
-url_BabyBoom = 'https://www.babyboom.co.za/product/tommee-tippee-breastfeeding-starter-set/' 
-response_BabyBoom = requests.get(url_BabyBoom)
-soup = BeautifulSoup(response_BabyBoom.text, "html.parser")
-#soup.findAll('span',class_="woocommerce-Price-amount amount")
-print("Baby Boom --> " + soup.findAll('span',class_="woocommerce-Price-amount amount")[1].text)
+print(capturedPrice)
 
+priceLog = priceLog.append({'Product':'Seagro 1L','Website':'Builders','Prices':capturedPrice}, ignore_index=True)
 
-
-#BabyShoppe
-url_BabyBoom = 'https://thebabyshoppe.co.za/onlineshop/product_view.php?n=Tommee-Tippee-Breast-Feeding-Starter-Set&id=476' 
-response_BabyBoom = requests.get(url_BabyBoom)
-soup = BeautifulSoup(response_BabyBoom.text, "html.parser")
-#soup.findAll('span',class_="woocommerce-Price-amount amount")
-print("Baby Shoppe --> " + soup.findAll('span',class_="label label-danger")[0].text)
+# Third entry
+url = 'https://www.builders.co.za/Garden-%26-Outdoor-Living/Garden/Fertilizers-%26-Plant-Food/All-Purpose-Plant-Food/Seagro-B2051-Fish-Emulsion-(5L)/p/000000000000044837?gclid=CjwKCAjwusrtBRBmEiwAGBPgE-LRetDedHWlwo2fewi5sEsXBwXep8IBm85o9r2L_47C5WpgDJr4nxoCcjUQAvD_BwE'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+capturedPrice = soup.findAll('div',class_="price")[0].text
+#capturedPrice = capturedPrice.strip('0')
+capturedPrice = capturedPrice.strip()
 
 
-#Loot BidorBuy
-url_BabyBoom = 'https://www.bidorbuy.co.za/item/396870822/Tommee_Tippee_Closer_to_Nature_Breastfeeding_Starter_Kit.html' 
-response_BabyBoom = requests.get(url_BabyBoom)
-soup = BeautifulSoup(response_BabyBoom.text, "html.parser")
-#soup.findAll('span',class_="woocommerce-Price-amount amount")
-print("Loot(BidorBuy) --> " + soup.findAll('span',class_="bigPriceText2")[0].text)
+priceLog = priceLog.append({'Product':'Seagro 5L','Website':'Builders','Prices':capturedPrice}, ignore_index=True)
+
+# Fourth entry
+url = 'https://www.bonsaitree.co.za/products/bonsaiboost-organic-bonsai-fertilizer?_pos=2&_sid=25dc18131&_ss=r&variant=5108685955'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+capturedPrice = soup.findAll('span',class_="current_price")[0].text
 
 
-#Baby Fantasy
-url_BabyBoom = 'http://babyfantasy.co.za/Tommee-Tippee-Breast-Feeding-Kit' 
-response_BabyBoom = requests.get(url_BabyBoom)
-soup = BeautifulSoup(response_BabyBoom.text, "html.parser")
-#soup.findAll('span',class_="woocommerce-Price-amount amount")
-print("Baby Fantasy --> " + soup.findAll('span',class_="price-new")[0].text)
-
-
+priceLog = priceLog.append({'Product':'BonsaiBoost 240x','Website':'BonsaiTree','Prices':capturedPrice[1:5]}, ignore_index=True)
 print(priceLog)
