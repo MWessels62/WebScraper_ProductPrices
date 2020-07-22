@@ -1,24 +1,16 @@
+import csv
 import time
 import urllib.request
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-import csv
 
 #Create a CSV where each line contains Product Description and URL
 #Read in CSV, running a loop for each line
 #Where it finds a matchin description in the current database it appends the latest data
 #Where it is not found it creates a new entry
-
-
-#Bonsai items
-#
-
-#inputDF = pd.read_csv('WebScraper_Input.csv')
-#print(inputDF)
-#print(inputDF.loc['Product Category'])
-
 
 
 priceLog = pd.DataFrame(columns=['Product','Website','Prices'])
