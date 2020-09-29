@@ -58,3 +58,4 @@ capturedPrice = soup.findAll('span',class_="current_price")[0].text
 
 priceLog = priceLog.append({'Product':'BonsaiBoost 240x','Website':'BonsaiTree','Prices':capturedPrice[1:5]}, ignore_index=True)
 print(priceLog)
+# Adding a comment
