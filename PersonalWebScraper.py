@@ -7,9 +7,9 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
-#Create a CSV where each line contains Product Description and URL
-#Read in CSV, running a loop for each line
-#Where it finds a matchin description in the current database it appends the latest data
+# * Create a CSV where each line contains Product Description and URL
+# * Read in CSV, running a loop for each line
+## * Where it finds a matching description in the current database it appends the latest data
 #Where it is not found it creates a new entry
 
 
@@ -59,3 +59,9 @@ capturedPrice = soup.findAll('span',class_="current_price")[0].text
 priceLog = priceLog.append({'Product':'BonsaiBoost 240x','Website':'BonsaiTree','Prices':capturedPrice[1:5]}, ignore_index=True)
 print(priceLog)
 # Adding a comment
+
+# TODO: refactor
+# ! important
+# ? question
+# * highlighted
+# #
