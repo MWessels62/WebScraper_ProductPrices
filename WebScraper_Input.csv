@@ -1,5 +1,7 @@
-﻿Product Category;Product Description;Product Variant;Store;URL;TagToSearch
-Bonsai;Seagro Fertilizer;1L;PnP;https://www.pnp.co.za/pnpstorefront/pnp/en/All-Products/Home-&-Outdoor/Garden-&-Patio/Growing-Fertilisers/Plant-Foods/EFEKTO-SEAGRO-1L/p/000000000000262286_EA;"class=""normalPrice"""
-Bonsai;Seagro Fertilizer;1L;Builders Warehouse;https://www.builders.co.za/Garden-%26-Outdoor-Living/Garden/Fertilizers-%26-Plant-Food/All-Purpose-Plant-Food/Seagro-B2051-Fish-Emulsion-%281L%29/p/000000000000036845;"class=""price"""
-Bonsai;Seagro Fertilizer;5L;Builders Warehouse;https://www.builders.co.za/Garden-%26-Outdoor-Living/Garden/Fertilizers-%26-Plant-Food/All-Purpose-Plant-Food/Seagro-B2051-Fish-Emulsion-(5L)/p/000000000000044837?gclid=CjwKCAjwusrtBRBmEiwAGBPgE-LRetDedHWlwo2fewi5sEsXBwXep8IBm85o9r2L_47C5WpgDJr4nxoCcjUQAvD_BwE;"class=""price"""
-Bonsai;BonsaiBoost Fertiliser;240x;BonsaiTree;https://www.bonsaitree.co.za/products/bonsaiboost-organic-bonsai-fertilizer?_pos=2&_sid=25dc18131&_ss=r&variant=5108685955;"class=""current_price money"""
+﻿UUID,Product Category,Product Description,Product Variant,Store,URL,Container,TagToSearch
+w8s5f,Bonsai,Seagro Fertilizer,1L,PnP,https://www.pnp.co.za/pnpstorefront/pnp/en/All-Products/Home-&-Outdoor/Garden-&-Patio/Growing-Fertilisers/Plant-Foods/EFEKTO-SEAGRO-1L/p/000000000000262286_EA,'div',normalPrice
+65sdf,Bonsai,Seagro Fertilizer,1L,Builders Warehouse,https://www.builders.co.za/Garden-%26-Outdoor-Living/Garden/Fertilizers-%26-Plant-Food/All-Purpose-Plant-Food/Seagro-B2051-Fish-Emulsion-%281L%29/p/000000000000036845,'div',price
+s65d6,Bonsai,Seagro Fertilizer,5L,Builders Warehouse,https://www.builders.co.za/Garden-%26-Outdoor-Living/Garden/Fertilizers-%26-Plant-Food/All-Purpose-Plant-Food/Seagro-B2051-Fish-Emulsion-(5L)/p/000000000000044837?gclid=CjwKCAjwusrtBRBmEiwAGBPgE-LRetDedHWlwo2fewi5sEsXBwXep8IBm85o9r2L_47C5WpgDJr4nxoCcjUQAvD_BwE,'div',price
+f6s5d,Bonsai,BonsaiBoost Fertiliser,240x,BonsaiTree,https://www.bonsaitree.co.za/products/bonsaiboost-organic-bonsai-fertilizer?_pos=2&_sid=25dc18131&_ss=r&variant=5108685955,'span',money
+45s4s,Baby Formula,Novalac,AR Digest,Clicks,https://clicks.co.za/novalac_ar-digest-infant-formula-800g/p/237336,'div',price blue
+
