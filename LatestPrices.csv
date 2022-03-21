@@ -1,6 +1,6 @@
-UUID,Product,Website,Prices
-w8s5f,Seagro Fertilizer,PnP,R19900
-65sdf,Seagro Fertilizer,Builders Warehouse,R140
-s65d6,Seagro Fertilizer,Builders Warehouse,R510
-f6s5d,BonsaiBoost Fertiliser,BonsaiTree,R0.00
-45s4s,Novalac,Clicks,R 303.49
+UUID,Product,Product Variant,Website,Prices
+w8s5f,Seagro Fertilizer,1L,PnP,R199
+65sdf,Seagro Fertilizer,1L,Builders Warehouse,R179
+s65d6,Seagro Fertilizer,5L,Builders Warehouse,R599
+f6s5d,BonsaiBoost Fertiliser,240x,BonsaiTree,R
+45s4s,Novalac,AR Digest,Clicks,R 322
